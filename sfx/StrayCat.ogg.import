@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/StrayCat.ogg-c86b3f080a37a77694e5a47db272ade2.oggstr"
+
+[deps]
+
+source_file="res://sfx/StrayCat.ogg"
+dest_files=[ "res://.import/StrayCat.ogg-c86b3f080a37a77694e5a47db272ade2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

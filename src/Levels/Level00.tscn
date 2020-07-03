@@ -1,0 +1,527 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/tileset_forest.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/Caves_background2.png" type="Texture" id=6]
+[ext_resource path="res://src/Levels/Level01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Layer_0001_8.png" type="Texture" id=8]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Layer_0000_9.png" type="Texture" id=10]
+[ext_resource path="res://assets/Caves_background3.png" type="Texture" id=11]
+[ext_resource path="res://assets/Layer_0004_Lights.png" type="Texture" id=12]
+[ext_resource path="res://assets/Layer_0006_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/clouds.png" type="Texture" id=14]
+[ext_resource path="res://assets/Layer_0008_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/Layer_0002_7.png" type="Texture" id=16]
+[ext_resource path="res://assets/Layer_0003_6.png" type="Texture" id=17]
+[ext_resource path="res://assets/Layer_0010_1.png" type="Texture" id=18]
+[ext_resource path="res://src/Screens/Touch_events.tscn" type="PackedScene" id=19]
+[ext_resource path="res://sfx/Tyrant's Bounty.ogg" type="AudioStream" id=20]
+
+[node name="Level00" type="Node2D"]
+position = Vector2( 1, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1114.74, -1049.54, -2173.5 ],
+"_edit_vertical_guides_": [ 4239.76 ]
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="TouchScreenInputs" parent="UserInterface" instance=ExtResource( 19 )]
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 9 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 8
+format = 1
+tile_data = PoolIntArray( -851969, 1, 131073, -917504, 1, 131073, -917503, 1, 1, -917502, 1, 1, -917501, 1, 1, -917500, 1, 1, -917499, 1, 1, -917498, 1, 1, -917497, 1, 1, -917496, 1, 1, -917495, 1, 1, -917494, 1, 1, -917493, 1, 1, -917492, 1, 1, -917491, 1, 1, -917490, 1, 1, -917489, 1, 1, -917488, 1, 1, -917487, 1, 1, -917486, 1, 1, -917485, 1, 1, -917484, 1, 1, -917483, 1, 1, -917482, 1, 1, -917481, 1, 1, -917480, 1, 1, -917479, 1, 1, -917478, 1, 1, -917477, 1, 1, -917476, 1, 1, -917475, 1, 1, -917474, 1, 1, -917473, 1, 1, -917472, 1, 1, -917471, 1, 1, -917470, 1, 1, -917469, 1, 1, -917468, 1, 1, -917467, 1, 1, -917466, 1, 1, -917465, 1, 1, -917464, 1, 1, -917463, 1, 1, -917462, 1, 1, -917461, 1, 1, -917460, 1, 1, -917459, 1, 1, -917458, 1, 1, -917457, 1, 1, -917456, 1, 1, -917455, 1, 1, -917454, 1, 1, -917453, 1, 1, -917452, 1, 1, -786433, 1, 131073, -851968, 1, 131073, -851967, 1, 131073, -851966, 1, 131073, -851965, 1, 131073, -851964, 1, 131073, -851963, 1, 131073, -851962, 1, 131073, -851961, 1, 131073, -851960, 1, 131073, -851959, 1, 131073, -851958, 1, 131073, -851957, 1, 131073, -851956, 1, 131073, -851955, 1, 131073, -851954, 1, 131073, -851953, 1, 131073, -851952, 1, 131073, -851951, 1, 131073, -851950, 1, 131073, -851949, 1, 131073, -851948, 1, 131073, -851947, 1, 131073, -851946, 1, 131073, -851945, 1, 131073, -851944, 1, 131073, -851943, 1, 131073, -851942, 1, 131073, -851941, 1, 131073, -851940, 1, 131073, -851939, 1, 131073, -851938, 1, 131073, -851937, 1, 131073, -851936, 1, 131073, -851935, 1, 131073, -851934, 1, 131073, -851933, 1, 131073, -851932, 1, 131073, -851931, 1, 131073, -851930, 1, 131073, -851929, 1, 131073, -851928, 1, 131073, -851927, 1, 131073, -851926, 1, 65539, -851925, 1, 131073, -851924, 1, 131073, -851923, 1, 131073, -851922, 1, 131073, -851921, 1, 131073, -851920, 1, 131073, -851919, 2, 0, -851918, 2, 0, -851917, 2, 0, -851916, 2, 0, -720897, 1, 65536, -786432, 1, 65537, -786431, 1, 65537, -786430, 1, 65537, -786429, 1, 65537, -786428, 1, 65537, -786427, 1, 65537, -786426, 1, 65537, -786425, 1, 65537, -786424, 1, 65537, -786423, 1, 65537, -786422, 1, 65537, -786421, 1, 65537, -786420, 1, 65537, -786419, 1, 65537, -786418, 1, 65537, -786417, 1, 65538, -786390, 1, 65539, -786383, 1, 65536, -786382, 1, 65537, -786381, 1, 65537, -786380, 1, 65538, -655361, 1, 65536, -720896, 1, 65537, -720895, 1, 65537, -720894, 1, 65537, -720893, 1, 65537, -720892, 1, 65537, -720891, 1, 65537, -720890, 1, 65537, -720889, 1, 65537, -720888, 1, 65537, -720887, 1, 65537, -720886, 1, 65537, -720885, 1, 65537, -720884, 1, 65537, -720883, 1, 65537, -720882, 1, 65537, -720881, 1, 65538, -720854, 1, 65539, -720847, 1, 65536, -720846, 1, 65537, -720845, 1, 65537, -720844, 1, 65538, -589825, 1, 65536, -655360, 1, 65537, -655359, 1, 65537, -655358, 1, 65537, -655357, 1, 65537, -655356, 1, 65537, -655355, 1, 65537, -655354, 1, 65537, -655353, 1, 65537, -655352, 1, 65537, -655351, 1, 65537, -655350, 1, 65537, -655349, 1, 65537, -655348, 1, 65537, -655347, 1, 65537, -655346, 1, 65537, -655345, 1, 65537, -655344, 1, 196609, -655343, 1, 196609, -655342, 1, 196609, -655341, 1, 196610, -655331, 1, 196608, -655330, 1, 196609, -655329, 1, 196609, -655328, 1, 196610, -655318, 1, 65539, -655311, 1, 65536, -655310, 1, 65537, -655309, 1, 65537, -655308, 1, 65538, -524289, 1, 65536, -589824, 1, 65537, -589823, 1, 65537, -589822, 1, 65537, -589821, 1, 65537, -589820, 1, 65537, -589819, 1, 65537, -589818, 1, 65537, -589817, 1, 65537, -589816, 1, 65537, -589815, 1, 65537, -589814, 1, 65537, -589813, 1, 65537, -589812, 1, 65537, -589811, 1, 65537, -589810, 1, 65537, -589809, 1, 65538, -589782, 1, 131072, -589781, 1, 196609, -589780, 1, 196609, -589779, 1, 196609, -589778, 1, 196610, -589775, 1, 65536, -589774, 1, 65537, -589773, 1, 65537, -589772, 1, 65538, -458753, 1, 65536, -524288, 1, 65537, -524287, 1, 65537, -524286, 1, 65537, -524285, 1, 131073, -524284, 1, 131073, -524283, 1, 131073, -524282, 1, 131073, -524281, 1, 131073, -524280, 1, 131073, -524279, 1, 131073, -524278, 1, 131073, -524277, 1, 131073, -524276, 1, 131073, -524275, 1, 65537, -524274, 1, 65537, -524273, 1, 65538, -524266, 1, 3, -524239, 1, 65536, -524238, 1, 65537, -524237, 1, 65537, -524236, 1, 65538, -393217, 1, 65536, -458752, 1, 65537, -458751, 1, 131074, -458739, 1, 65536, -458738, 1, 65537, -458737, 1, 65538, -458730, 1, 131073, -458729, 1, 196609, -458728, 1, 196609, -458727, 1, 196609, -458726, 1, 196609, -458725, 1, 1, -458724, 1, 196609, -458723, 1, 196609, -458722, 1, 196609, -458721, 1, 196609, -458720, 1, 196609, -458719, 1, 196609, -458718, 1, 196609, -458717, 1, 196609, -458716, 1, 196609, -458715, 1, 196609, -458714, 1, 196609, -458713, 1, 196609, -458712, 1, 196609, -458711, 1, 196609, -458710, 1, 196609, -458709, 1, 196609, -458708, 1, 196609, -458707, 1, 196609, -458706, 1, 1, -458705, 1, 1, -458704, 1, 1, -458703, 1, 65537, -458702, 1, 65537, -458701, 1, 65537, -458700, 1, 65538, -327681, 1, 65536, -393216, 1, 65538, -393203, 1, 65536, -393202, 1, 65537, -393201, 1, 65538, -393196, 1, 196608, -393195, 1, 196610, -393189, 1, 65539, -393170, 1, 65536, -393169, 1, 65537, -393168, 1, 65537, -393167, 1, 65537, -393166, 1, 65537, -393165, 1, 65537, -393164, 1, 65538, -262145, 1, 65536, -327680, 1, 65538, -327667, 1, 65536, -327666, 1, 65537, -327665, 1, 65538, -327653, 1, 131075, -327634, 1, 131072, -327633, 1, 131073, -327632, 1, 65537, -327631, 1, 65537, -327630, 1, 65537, -327629, 1, 65537, -327628, 1, 65538, -196609, 1, 65536, -262144, 1, 65538, -262131, 1, 65536, -262130, 1, 65537, -262129, 1, 65537, -262128, 1, 196610, -262114, 1, 0, -262113, 1, 2, -262106, 1, 3, -262096, 1, 65536, -262095, 1, 65537, -262094, 1, 65537, -262093, 1, 65537, -262092, 1, 65538, -131073, 1, 65536, -196608, 1, 65538, -196605, 1, 196608, -196604, 1, 196609, -196603, 1, 196609, -196602, 1, 196609, -196601, 1, 196609, -196600, 1, 196609, -196599, 1, 196609, -196598, 1, 196609, -196597, 1, 196609, -196596, 1, 196609, -196595, 1, 65537, -196594, 1, 131073, -196593, 1, 131074, -196578, 1, 65536, -196577, 1, 131073, -196576, 1, 196609, -196575, 1, 196609, -196574, 1, 196609, -196573, 1, 196610, -196570, 1, 65539, -196565, 1, 3, -196560, 1, 65536, -196559, 1, 65537, -196558, 1, 65537, -196557, 1, 65537, -196556, 1, 65538, -65537, 1, 65536, -131072, 1, 65538, -131056, 1, 196608, -131055, 1, 196609, -131054, 1, 196609, -131053, 1, 196609, -131052, 1, 196609, -131051, 1, 196609, -131050, 1, 196609, -131049, 1, 196609, -131048, 1, 196609, -131047, 1, 196609, -131046, 1, 196609, -131045, 1, 196609, -131044, 1, 196609, -131043, 1, 196609, -131042, 1, 131073, -131034, 1, 131072, -131033, 1, 196609, -131032, 1, 196609, -131031, 1, 196609, -131030, 1, 196609, -131029, 1, 131074, -131024, 1, 65536, -131023, 1, 65537, -131022, 1, 65537, -131021, 1, 65537, -131020, 1, 65538, -1, 1, 65536, -65536, 1, 65537, -65535, 1, 196610, -65489, 1, 196608, -65488, 1, 65537, -65487, 1, 65537, -65486, 1, 65537, -65485, 1, 65537, -65484, 1, 65538, 65535, 1, 65536, 0, 1, 65538, 2, 1, 196608, 3, 1, 196610, 18, 1, 196608, 19, 1, 2, 48, 1, 65536, 49, 1, 65537, 50, 1, 65537, 51, 1, 65537, 52, 1, 65538, 131071, 1, 65536, 65536, 1, 65538, 65543, 1, 196611, 65555, 1, 131072, 65556, 1, 196609, 65557, 1, 196609, 65558, 1, 196609, 65559, 1, 196610, 65577, 1, 196608, 65578, 1, 196609, 65579, 1, 196609, 65580, 1, 196610, 65584, 1, 65536, 65585, 1, 65537, 65586, 1, 65537, 65587, 1, 65537, 65588, 1, 65538, 196607, 1, 65536, 131072, 1, 65538, 131101, 1, 3, 131120, 1, 65536, 131121, 1, 65537, 131122, 1, 65537, 131123, 1, 65537, 131124, 1, 65538, 262143, 1, 65536, 196608, 1, 65538, 196618, 1, 196608, 196619, 1, 196609, 196620, 1, 196610, 196635, 1, 196608, 196636, 1, 196609, 196637, 1, 131074, 196655, 1, 196608, 196656, 1, 65537, 196657, 1, 65537, 196658, 1, 65537, 196659, 1, 65537, 196660, 1, 65538, 327679, 1, 65536, 262144, 1, 65538, 262192, 1, 65536, 262193, 1, 65537, 262194, 1, 65537, 262195, 1, 65537, 262196, 1, 65538, 393215, 1, 65536, 327680, 1, 65538, 327700, 1, 0, 327701, 1, 1, 327702, 1, 1, 327703, 1, 196610, 327714, 1, 0, 327715, 1, 1, 327716, 1, 1, 327717, 1, 2, 327723, 1, 0, 327724, 1, 196609, 327725, 1, 196610, 327728, 1, 131072, 327729, 1, 131073, 327730, 1, 65537, 327731, 1, 65537, 327732, 1, 65538, 458751, 1, 65536, 393216, 1, 65538, 393225, 1, 0, 393226, 1, 1, 393227, 1, 1, 393228, 1, 2, 393235, 1, 0, 393236, 1, 65537, 393237, 1, 65537, 393238, 1, 65538, 393250, 1, 65536, 393251, 1, 65537, 393252, 1, 65537, 393253, 1, 65538, 393259, 1, 65539, 393266, 1, 131072, 393267, 1, 65537, 393268, 1, 65538, 524287, 1, 65536, 458752, 1, 65537, 458753, 1, 1, 458754, 1, 1, 458755, 1, 1, 458756, 1, 1, 458757, 1, 1, 458758, 1, 1, 458759, 1, 1, 458760, 1, 1, 458761, 1, 65537, 458762, 1, 65537, 458763, 1, 65537, 458764, 1, 65537, 458765, 1, 1, 458766, 1, 1, 458767, 1, 1, 458768, 1, 1, 458769, 1, 1, 458770, 1, 196609, 458771, 1, 131073, 458772, 1, 131073, 458773, 1, 131073, 458774, 1, 131073, 458775, 1, 196609, 458776, 1, 196609, 458777, 1, 196610, 458782, 1, 196608, 458783, 1, 196609, 458784, 1, 196609, 458785, 1, 196609, 458786, 1, 65537, 458787, 1, 131073, 458788, 1, 131073, 458789, 1, 65537, 458790, 1, 196609, 458791, 1, 196609, 458792, 1, 196609, 458793, 1, 1, 458794, 1, 196609, 458795, 1, 131073, 458796, 1, 196609, 458797, 1, 196609, 458798, 1, 196609, 458799, 1, 196609, 458800, 1, 2, 458803, 1, 65536, 458804, 1, 65538, 589823, 1, 65536, 524288, 1, 65537, 524289, 1, 131073, 524290, 1, 131073, 524291, 1, 131073, 524292, 1, 131073, 524293, 1, 131073, 524294, 1, 131073, 524295, 1, 131073, 524296, 1, 131073, 524297, 1, 131073, 524298, 1, 131073, 524299, 1, 131073, 524300, 1, 131073, 524301, 1, 131073, 524302, 1, 131073, 524303, 1, 131073, 524304, 1, 131073, 524305, 1, 131074, 524329, 1, 65539, 524336, 1, 65536, 524337, 1, 196610, 524339, 1, 65536, 524340, 1, 65538, 655359, 1, 65536, 589824, 1, 65538, 589865, 1, 131075, 589872, 1, 65539, 589875, 1, 65536, 589876, 1, 65538, 720895, 1, 65536, 655360, 1, 65538, 655388, 1, 196611, 655399, 1, 3, 655408, 1, 131075, 655410, 1, 3, 655411, 4, 65536, 655412, 4, 65538, 786431, 1, 65536, 720896, 1, 65538, 720901, 5, 0, 720915, 1, 3, 720935, 1, 65539, 720946, 1, 65539, 720947, 4, 65536, 720948, 4, 65538, 851967, 4, 65537, 786432, 4, 65537, 786433, 4, 1, 786434, 4, 1, 786435, 4, 1, 786436, 4, 1, 786437, 4, 65538, 786439, 5, 0, 786444, 4, 0, 786445, 4, 1, 786446, 4, 1, 786447, 4, 1, 786448, 4, 2, 786451, 4, 65536, 786452, 4, 1, 786453, 4, 1, 786454, 4, 1, 786455, 4, 1, 786456, 4, 1, 786457, 4, 1, 786458, 4, 2, 786463, 4, 0, 786464, 4, 1, 786465, 4, 1, 786466, 4, 1, 786467, 4, 1, 786468, 4, 1, 786469, 4, 1, 786470, 4, 1, 786471, 4, 1, 786472, 4, 1, 786473, 4, 1, 786474, 4, 1, 786475, 4, 1, 786476, 4, 1, 786477, 4, 1, 786478, 4, 1, 786479, 4, 1, 786480, 4, 1, 786481, 4, 1, 786482, 4, 1, 786483, 4, 65537, 786484, 4, 65538, 917503, 4, 65537, 851968, 4, 65537, 851969, 4, 65537, 851970, 4, 65537, 851971, 4, 65537, 851972, 4, 65537, 851973, 4, 65538, 851975, 6, 0, 851980, 4, 131072, 851981, 4, 131073, 851982, 4, 131073, 851983, 4, 131073, 851984, 4, 131074, 851987, 4, 131072, 851988, 4, 131073, 851989, 4, 131073, 851990, 4, 131073, 851991, 4, 131073, 851992, 4, 131073, 851993, 4, 131073, 851994, 4, 131074, 851999, 4, 131072, 852000, 4, 131073, 852001, 4, 131073, 852002, 4, 131073, 852003, 4, 131073, 852004, 4, 131073, 852005, 4, 131073, 852006, 4, 131073, 852007, 4, 131073, 852008, 4, 131073, 852009, 4, 131073, 852010, 4, 131073, 852011, 4, 131073, 852012, 4, 131073, 852013, 4, 131073, 852014, 4, 131073, 852015, 4, 131073, 852016, 4, 131073, 852017, 4, 131073, 852018, 4, 131073, 852019, 4, 131073, 852020, 4, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3720.81, -737.43 )
+
+[node name="Camera2D" parent="Player" index="2"]
+offset = Vector2( 0, -80 )
+zoom = Vector2( 1.1, 1.1 )
+limit_left = 0
+limit_top = -1040
+limit_right = 4160
+limit_bottom = 1115
+smoothing_speed = 10.0
+
+[node name="Portal2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 958.019, -230.818 )
+next_scene = ExtResource( 7 )
+
+[node name="CoinsAll" type="Node" parent="."]
+
+[node name="Coin11" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 456.162, 467.602 )
+
+[node name="Coin" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2333.57, 744.288 )
+
+[node name="Coin2" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1012.41, 147.48 )
+
+[node name="Coin3" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 601.065, 5.46439 )
+
+[node name="Coin4" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 570.331, -313.145 )
+
+[node name="Coin5" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 454.556, -312.207 )
+
+[node name="Coin25" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 783.275, -312.207 )
+
+[node name="Coin27" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 146.499, 843.82 )
+
+[node name="Coin28" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 242.035, 784.11 )
+
+[node name="Coin29" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 322.643, 842.327 )
+
+[node name="Coin30" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 233.825, 910.993 )
+
+[node name="Coin31" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 780.949, 838.754 )
+
+[node name="Coin32" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 653.05, 874.281 )
+
+[node name="Coin33" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1554.27, 793.752 )
+
+[node name="Coin34" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1448.87, 830.464 )
+
+[node name="Coin35" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1350.57, 890.861 )
+
+[node name="Coin26" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 673.695, -312.207 )
+
+[node name="Coin6" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1276.61, 20.1844 )
+
+[node name="Coin44" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1146.96, 63.402 )
+
+[node name="Coin41" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2107.14, 91.3132 )
+
+[node name="Coin46" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2070.08, 226.64 )
+
+[node name="Coin47" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1970.2, 262.082 )
+
+[node name="Coin48" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1884.81, 337.801 )
+
+[node name="Coin42" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2011.31, 31.4585 )
+
+[node name="Coin43" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1894.81, 8.91014 )
+
+[node name="Coin7" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1985.33, 510.683 )
+
+[node name="Coin45" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2270.31, 403.09 )
+
+[node name="Coin49" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2377.9, 443.801 )
+
+[node name="Coin50" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3800.6, 176.04 )
+
+[node name="Coin51" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3568.54, 18.953 )
+
+[node name="Coin8" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 328.162, 475.602 )
+
+[node name="Coin9" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 392.162, 380.392 )
+
+[node name="Coin10" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 456.162, 310.488 )
+
+[node name="Coin12" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 592.162, 467.602 )
+
+[node name="Coin13" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 524.542, 387.602 )
+
+[node name="Coin14" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3664, 512 )
+
+[node name="Coin15" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3184, -224 )
+
+[node name="Coin16" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2280, -424 )
+
+[node name="Coin17" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1416, -216 )
+
+[node name="Coin18" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1384, -616 )
+
+[node name="Coin19" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 1352, -912 )
+
+[node name="Coin20" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2480, -856 )
+
+[node name="Coin21" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2624, -856 )
+
+[node name="Coin22" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2524.06, 884.485 )
+
+[node name="Coin36" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3430.1, 801.839 )
+
+[node name="Coin37" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3766.81, 801.839 )
+
+[node name="Coin38" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3603.05, 711.541 )
+
+[node name="Coin39" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3518.87, 751.333 )
+
+[node name="Coin40" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 3690.28, 751.333 )
+
+[node name="Coin23" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 2442.97, 795.06 )
+
+[node name="Coin24" parent="CoinsAll" instance=ExtResource( 3 )]
+position = Vector2( 908.435, 852.183 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 984.828, 195.058 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1465.07, 256 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3172.04, 292.122 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3372.99, -234.869 )
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2651.2, 452.064 )
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3738.74, 932.919 )
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2326.83, -195.286 )
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2253.56, -572.848 )
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3234.13, -587.268 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 919.697, -255.605 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -128
+scroll_base_scale = Vector2( 0, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
+
+[node name="Layer_0010_1" type="TextureRect" parent="CanvasLayer2/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.882353, 0.756863, 0.270588, 1 )
+self_modulate = Color( 0.929412, 0.960784, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1027.0
+margin_right = 4237.0
+margin_bottom = 601.0
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layer_0010_2" type="TextureRect" parent="CanvasLayer2/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.164706, 0.164706, 0.164706, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 629.0
+margin_right = 4237.0
+margin_bottom = 999.0
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer2/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.992157, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -266.922
+margin_right = 4058.0
+margin_bottom = 733.078
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -50
+offset = Vector2( 0, -50 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_base_scale = Vector2( 0.3, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground2"]
+
+[node name="Layer_0002_7" type="TextureRect" parent="CanvasLayer2/ParallaxBackground2/ParallaxLayer"]
+modulate = Color( 0.917647, 0.517647, 0.133333, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -227.142
+margin_right = 4196.0
+margin_bottom = 565.858
+texture = ExtResource( 16 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layer_0002_8" type="TextureRect" parent="CanvasLayer2/ParallaxBackground2/ParallaxLayer"]
+modulate = Color( 0.905882, 0.560784, 0.254902, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -351.038
+margin_right = 4196.0
+margin_bottom = 441.962
+texture = ExtResource( 16 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer2/ParallaxBackground2/ParallaxLayer"]
+modulate = Color( 1, 0.752941, 0.235294, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -248.0
+margin_right = 3950.0
+margin_bottom = 896.0
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -40
+offset = Vector2( 0, -50 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_base_scale = Vector2( 0.2, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground3"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer2/ParallaxBackground3/ParallaxLayer"]
+modulate = Color( 1, 0.811765, 0.0745098, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -370.0
+margin_right = 4239.0
+margin_bottom = 518.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground6" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -80
+offset = Vector2( 0, -50 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_base_scale = Vector2( 0.2, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground6"]
+
+[node name="Caves_background4" type="TextureRect" parent="CanvasLayer2/ParallaxBackground6/ParallaxLayer"]
+modulate = Color( 1, 0.788235, 0.384314, 0.866667 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -250.114
+margin_right = 4234.0
+margin_bottom = 637.886
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="CanvasLayer2"]
+offset = Vector2( 0, -50 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_base_scale = Vector2( 0.3, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground5"]
+
+[node name="Caves_background4" type="TextureRect" parent="CanvasLayer2/ParallaxBackground5/ParallaxLayer"]
+modulate = Color( 0.713726, 0.705882, 0.0941176, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -258.0
+margin_right = 4027.0
+margin_bottom = 630.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caves_background5" type="TextureRect" parent="CanvasLayer2/ParallaxBackground5/ParallaxLayer"]
+modulate = Color( 0.764706, 0.129412, 0.129412, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -206.377
+margin_right = 4027.0
+margin_bottom = 681.623
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layer_0000_9" type="TextureRect" parent="CanvasLayer2/ParallaxBackground5/ParallaxLayer"]
+modulate = Color( 0.32549, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -186.36
+margin_right = 4208.0
+margin_bottom = 617.64
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -110
+offset = Vector2( 0, -50 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_base_scale = Vector2( 0.5, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground4"]
+
+[node name="Caves_background2" type="TextureRect" parent="CanvasLayer2/ParallaxBackground4/ParallaxLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 568.0
+margin_right = 4200.0
+margin_bottom = 1148.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caves_background4" type="TextureRect" parent="CanvasLayer2/ParallaxBackground4/ParallaxLayer"]
+modulate = Color( 0.721569, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 597.073
+margin_right = 4209.0
+margin_bottom = 1181.07
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground_Clouds" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -90
+scroll_base_scale = Vector2( 0.5, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground_Clouds"]
+
+[node name="ParallaxBackground7" type="ParallaxBackground" parent="CanvasLayer2"]
+scroll_base_scale = Vector2( 0.2, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground7"]
+position = Vector2( 0, -106.151 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/ParallaxBackground7/ParallaxLayer"]
+modulate = Color( 0.968627, 0.980392, 0.847059, 1 )
+margin_top = -588.779
+margin_right = 1563.0
+margin_bottom = 118.221
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/ParallaxBackground7/ParallaxLayer"]
+modulate = Color( 0.968627, 0.980392, 0.847059, 1 )
+margin_left = 1346.53
+margin_top = -679.386
+margin_right = 2909.53
+margin_bottom = 27.614
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2/ParallaxBackground7/ParallaxLayer"]
+modulate = Color( 0.968627, 0.980392, 0.847059, 1 )
+margin_left = 2591.67
+margin_top = -740.223
+margin_right = 4154.67
+margin_bottom = -33.2234
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
+bus = "Soundtrack"
+
+[editable path="Player"]

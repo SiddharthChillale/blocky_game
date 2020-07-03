@@ -1,0 +1,212 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Layer_0004_Lights.png" type="Texture" id=2]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/FinalLevel.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/Layer_0002_7.png" type="Texture" id=6]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Screens/EndCutscene.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Caves_background3.png" type="Texture" id=9]
+[ext_resource path="res://assets/Caves_background4a.png" type="Texture" id=10]
+[ext_resource path="res://assets/Layer_0010_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Boss.png" type="Texture" id=12]
+[ext_resource path="res://assets/background.png" type="Texture" id=13]
+[ext_resource path="res://src/Screens/Touch_events.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sfx/NullandVoid.ogg" type="AudioStream" id=15]
+
+[node name="LevelFinal" type="Node2D"]
+position = Vector2( 1, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1200.0, -1040.35, -480.0, 281.089, 718.326 ],
+"_edit_vertical_guides_": [ 4084.76, 2160.0, 714.575, 1337.41 ]
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="TouchScreenInputs" parent="UserInterface" instance=ExtResource( 14 )]
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 3 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_base_scale = Vector2( 0, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 1, 0.380392, 0.380392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -248.0
+margin_right = 2024.0
+margin_bottom = 752.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -80
+scroll_base_scale = Vector2( 0, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer"]
+modulate = Color( 1, 0.658824, 0.458824, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -248.0
+margin_right = 2024.0
+margin_bottom = 896.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -90
+scroll_base_scale = Vector2( 0.2, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground3"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = -543.0
+margin_right = 2067.0
+margin_bottom = 345.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caves_background4" type="TextureRect" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = -543.0
+margin_right = 2067.0
+margin_bottom = 345.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_base_scale = Vector2( 0.5, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground4"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer/ParallaxBackground4/ParallaxLayer"]
+modulate = Color( 0.827451, 0.396078, 0.0509804, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 600.0
+margin_right = 2152.0
+margin_bottom = 1488.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -128
+scroll_base_scale = Vector2( 0.5, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground5"]
+
+[node name="Caves_background3" type="TextureRect" parent="CanvasLayer/ParallaxBackground5/ParallaxLayer"]
+modulate = Color( 0.859375, 0.563965, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_right = 2152.0
+margin_bottom = 784.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 8
+format = 1
+tile_data = PoolIntArray( -393216, 8, 0, -393215, 8, 0, -393214, 8, 0, -393213, 8, 0, -393212, 8, 0, -393211, 8, 0, -393210, 7, 0, -393209, 8, 0, -393208, 8, 0, -393207, 7, 0, -393206, 8, 0, -393205, 8, 0, -393204, 8, 0, -393203, 8, 0, -393202, 8, 0, -393201, 7, 0, -393200, 8, 0, -393199, 8, 0, -393198, 8, 0, -393197, 8, 0, -393196, 8, 0, -393195, 8, 0, -393194, 7, 0, -393193, 7, 0, -393192, 8, 0, -393191, 8, 0, -393190, 8, 0, -393189, 7, 0, -393188, 2, 0, -327680, 8, 0, -327679, 8, 0, -327678, 8, 0, -327677, 8, 0, -327676, 8, 0, -327675, 7, 0, -327674, 8, 0, -327673, 8, 0, -327672, 7, 0, -327671, 8, 0, -327670, 8, 0, -327669, 8, 0, -327668, 7, 0, -327667, 8, 0, -327666, 8, 0, -327665, 7, 0, -327664, 8, 0, -327663, 8, 0, -327662, 7, 0, -327661, 8, 0, -327660, 8, 0, -327659, 7, 0, -327658, 8, 0, -327657, 8, 0, -327656, 7, 0, -327655, 8, 0, -327654, 8, 0, -327653, 7, 0, -327652, 2, 0, -262144, 3, 0, -262143, 3, 0, -262142, 3, 0, -262141, 3, 0, -262140, 3, 0, -262139, 3, 0, -262138, 3, 0, -262137, 3, 0, -262136, 6, 0, -262135, 3, 0, -262134, 3, 0, -262133, 3, 0, -262132, 3, 0, -262131, 3, 0, -262130, 1, 0, -262129, 3, 0, -262128, 3, 0, -262127, 3, 0, -262126, 3, 0, -262125, 3, 0, -262124, 7, 0, -262123, 3, 0, -262122, 7, 0, -262121, 3, 0, -262120, 3, 0, -262119, 3, 0, -262118, 3, 0, -262117, 7, 0, -262116, 2, 0, -196608, 7, 0, -196594, 3, 0, -196584, 3, 0, -196583, 2, 0, -196582, 7, 0, -196581, 7, 0, -196580, 2, 0, -131072, 7, 0, -131047, 14, 0, -131046, 7, 0, -131045, 7, 0, -131044, 2, 0, -65536, 5, 0, -65512, 8, 0, -65511, 2, 0, -65510, 7, 0, -65509, 7, 0, -65508, 2, 0, 0, 8, 0, 17, 10, 0, 19, 8, 0, 24, 8, 0, 25, 7, 0, 26, 7, 0, 27, 7, 0, 28, 2, 0, 65536, 8, 0, 65560, 7, 0, 65561, 2, 0, 65562, 7, 0, 65563, 7, 0, 65564, 2, 0, 131072, 8, 0, 131094, 10, 0, 131096, 8, 0, 131097, 1, 0, 131098, 7, 0, 131099, 7, 0, 131100, 2, 0, 196608, 8, 0, 196632, 7, 0, 196633, 7, 0, 196634, 7, 0, 196635, 7, 0, 196636, 2, 0, 262144, 8, 0, 262163, 1, 0, 262164, 8, 0, 262168, 1, 0, 262169, 7, 0, 262170, 3, 0, 262171, 7, 0, 262172, 2, 0, 327680, 8, 0, 327704, 8, 0, 327705, 7, 0, 327707, 7, 0, 327708, 2, 0, 393216, 8, 0, 393239, 10, 0, 393240, 7, 0, 393241, 15, 0, 393243, 7, 0, 393244, 2, 0, 458752, 8, 0, 458776, 8, 0, 458777, 7, 0, 458778, 14, 0, 458779, 7, 0, 458780, 2, 0, 524288, 8, 0, 524294, 1, 0, 524306, 1, 0, 524307, 1, 0, 524311, 14, 0, 524312, 7, 0, 524313, 7, 0, 524315, 7, 0, 524316, 2, 0, 589824, 8, 0, 589830, 3, 0, 589831, 7, 0, 589832, 7, 0, 589833, 7, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589837, 7, 0, 589838, 7, 0, 589839, 7, 0, 589840, 7, 0, 589841, 7, 0, 589842, 7, 0, 589843, 3, 0, 589846, 7, 0, 589847, 1, 0, 589848, 1, 0, 589849, 7, 0, 589850, 7, 0, 589851, 3, 0, 589852, 2, 0, 655360, 7, 0, 655361, 1, 0, 655362, 1, 0, 655363, 8, 0, 655382, 8, 0, 655383, 1, 0, 655384, 7, 0, 655385, 3, 0, 655387, 14, 0, 655388, 2, 0, 655389, 2, 0, 720896, 7, 0, 720897, 15, 0, 720898, 1, 0, 720899, 7, 0, 720917, 8, 0, 720918, 1, 0, 720919, 8, 0, 720920, 7, 0, 720922, 14, 0, 720923, 14, 0, 720924, 2, 0, 720925, 2, 0, 786432, 7, 0, 786433, 2, 0, 786435, 7, 0, 786453, 8, 0, 786454, 7, 0, 786455, 1, 0, 786456, 3, 0, 786457, 14, 0, 786460, 2, 0, 786461, 2, 0, 851968, 7, 0, 851969, 7, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 7, 0, 851974, 1, 0, 851975, 7, 0, 851976, 1, 0, 851977, 8, 0, 851978, 1, 0, 851979, 8, 0, 851980, 1, 0, 851981, 7, 0, 851982, 1, 0, 851983, 7, 0, 851984, 7, 0, 851985, 7, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 7, 0, 851992, 7, 0, 851993, 7, 0, 851994, 7, 0, 851995, 7, 0, 851996, 2, 0, 851997, 2, 0, 917504, 7, 0, 917505, 7, 0, 917506, 7, 0, 917507, 7, 0, 917508, 7, 0, 917509, 7, 0, 917510, 7, 0, 917511, 7, 0, 917512, 7, 0, 917513, 7, 0, 917514, 7, 0, 917515, 7, 0, 917516, 7, 0, 917517, 7, 0, 917518, 7, 0, 917519, 7, 0, 917520, 7, 0, 917521, 7, 0, 917522, 7, 0, 917523, 7, 0, 917524, 7, 0, 917525, 7, 0, 917526, 7, 0, 917527, 7, 0, 917528, 7, 0, 917529, 7, 0, 917530, 7, 0, 917531, 7, 0, 917532, 2, 0, 917533, 2, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1031, 720 )
+scale = Vector2( 5, 5 )
+speed = Vector2( 700, 0 )
+enemy_score = 1000
+
+[node name="enemy" parent="Enemy" index="0"]
+texture = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" parent="Enemy" index="1"]
+polygon = PoolVector2Array( -63.6499, -21.9999, -50.6713, -34.3799, -49.2843, -60.1771, -28.4801, -77.3753, 28.1073, -77.3753, 48.9115, -59.0676, 48.9115, -34.1025, 60.8003, -23.3299, 57.0002, -0.719864, -60.6099, -0.909851 )
+
+[node name="Enemy_death" parent="Enemy" index="5"]
+volume_db = -7.429
+pitch_scale = 0.69
+
+[node name="Particles2D" parent="Enemy" index="6"]
+emitting = false
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 199, 752 )
+
+[node name="Camera2D" parent="Player" index="2"]
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_top = -480
+limit_right = 2160
+limit_bottom = 1200
+
+[node name="Portal2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 967, 576 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -100
+next_scene = ExtResource( 8 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -126
+
+[node name="background" type="TextureRect" parent="CanvasLayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1966.0
+margin_top = -467.0
+margin_right = 1404.0
+margin_bottom = 584.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+bus = "Soundtrack"
+
+[editable path="Enemy"]
+
+[editable path="Player"]

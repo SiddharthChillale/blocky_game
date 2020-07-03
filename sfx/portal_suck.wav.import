@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/portal_suck.wav-9641c6b6f0eb6ec49bf877fcf50ba39d.sample"
+
+[deps]
+
+source_file="res://sfx/portal_suck.wav"
+dest_files=[ "res://.import/portal_suck.wav-9641c6b6f0eb6ec49bf877fcf50ba39d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

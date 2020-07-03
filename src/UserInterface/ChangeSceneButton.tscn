@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Screens/pixel_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.gd" type="Script" id=2]
+[ext_resource path="res://sfx/Click_5.wav" type="AudioStream" id=3]
+
+[node name="ChangeSceneButton" type="Button"]
+margin_right = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Title"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Levels/Tutorial.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="button_up" from="." to="." method="_on_button_up"]

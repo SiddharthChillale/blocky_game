@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/End_Monolith.ogg-2069b2bbaa72f9abf9dac7f351d12280.oggstr"
+
+[deps]
+
+source_file="res://sfx/End_Monolith.ogg"
+dest_files=[ "res://.import/End_Monolith.ogg-2069b2bbaa72f9abf9dac7f351d12280.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

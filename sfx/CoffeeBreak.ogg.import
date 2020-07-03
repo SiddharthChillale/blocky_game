@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CoffeeBreak.ogg-2a0725ab1ea1f188931252a397758768.oggstr"
+
+[deps]
+
+source_file="res://sfx/CoffeeBreak.ogg"
+dest_files=[ "res://.import/CoffeeBreak.ogg-2a0725ab1ea1f188931252a397758768.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

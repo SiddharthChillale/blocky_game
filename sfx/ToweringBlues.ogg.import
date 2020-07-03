@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ToweringBlues.ogg-8cbbbb7770bfb14792b13bc5bdaeb365.oggstr"
+
+[deps]
+
+source_file="res://sfx/ToweringBlues.ogg"
+dest_files=[ "res://.import/ToweringBlues.ogg-8cbbbb7770bfb14792b13bc5bdaeb365.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

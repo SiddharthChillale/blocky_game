@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Challenger.ogg-d2f6e3b9818d9f94c7a1a9557ef75e91.oggstr"
+
+[deps]
+
+source_file="res://sfx/Challenger.ogg"
+dest_files=[ "res://.import/Challenger.ogg-d2f6e3b9818d9f94c7a1a9557ef75e91.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
