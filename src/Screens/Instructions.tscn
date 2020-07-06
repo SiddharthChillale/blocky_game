@@ -25,34 +25,32 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="background" type="TextureRect" parent="VBoxContainer/Control"]
-modulate = Color( 1, 1, 1, 0.254902 )
+modulate = Color( 1, 1, 1, 0.317647 )
+self_modulate = Color( 0.0705882, 0.713726, 0.0352941, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -307.893
-margin_top = -53.5867
-margin_right = 331.107
-margin_bottom = 83.4133
+margin_left = -345.0
+margin_top = -54.0
+margin_right = 367.0
+margin_bottom = 83.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -196.687
-margin_top = -29.5
-margin_right = 98.313
-margin_bottom = 29.5
+[node name="Label" type="Label" parent="VBoxContainer/Control/background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -237.0
+margin_bottom = -46.0
 rect_scale = Vector2( 1.5, 1.5 )
 size_flags_horizontal = 3
-text = "Hold JUMP to jump higher,
-Arrow to move"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Hold Space to jump higher,
+Arrow keys / mouse buttons to move"
 align = 1
 valign = 1
 __meta__ = {

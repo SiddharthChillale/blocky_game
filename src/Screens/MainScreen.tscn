@@ -50,12 +50,18 @@ __meta__ = {
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 3 )]
 margin_right = 351.0
-margin_bottom = 98.0
+margin_bottom = 81.0
 text = "Start Adventure"
 next_scene_path = "res://src/Screens/OpeningCutsene.tscn"
 
+[node name="Control" type="Control" parent="Menu"]
+margin_top = 85.0
+margin_right = 351.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 0, 30 )
+
 [node name="QuitButton" parent="Menu" instance=ExtResource( 2 )]
-margin_top = 102.0
+margin_top = 119.0
 margin_right = 351.0
 margin_bottom = 200.0
 text = "Quit "

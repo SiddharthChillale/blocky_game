@@ -132,7 +132,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -285.569, -302.716 ],
 "_edit_vertical_guides_": [ -40.8208, 39.7726 ]
 }
-speed = Vector2( 1000, 1000 )
+speed = Vector2( 800, 1000 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( -0.12516, -49.349 )

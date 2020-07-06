@@ -12,6 +12,8 @@ onready var player_health: = get_tree().get_nodes_in_group("Health")
 export var stomp_impulse := 1000.0
 
 var _health: = 3
+var _jumpWasPressed = false
+
 
 func _on_EnemyDetector_area_entered(area):
 	# animation stomp and dust
@@ -73,7 +75,7 @@ func get_direction():
 
 func _is_just_jumped():
 	var out: = Input.is_action_just_pressed("jump") and is_on_floor()
-	
+
 	return out
 
 func cal_move_velocity(
@@ -115,4 +117,3 @@ func die():
 	PlayerData.deaths += 1
 	
 	
-

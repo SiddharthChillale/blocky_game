@@ -215,7 +215,7 @@ __meta__ = {
 layer = -50
 follow_viewport_enable = true
 
-[node name="MarginContainer" parent="CanvasLayer3" instance=ExtResource( 14 )]
+[node name="instructions" parent="CanvasLayer3" instance=ExtResource( 14 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -225,9 +225,37 @@ margin_top = -23.5
 margin_right = 1.63745
 margin_bottom = -19.5
 
+[node name="hint" parent="CanvasLayer3" instance=ExtResource( 14 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 838.401
+margin_top = -23.5
+margin_right = 838.401
+margin_bottom = -19.5
+
+[node name="VBoxContainer" parent="CanvasLayer3/hint" index="0"]
+margin_right = 0.0
+margin_bottom = 4.0
+
+[node name="Control" parent="CanvasLayer3/hint/VBoxContainer" index="0"]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Label" parent="CanvasLayer3/hint/VBoxContainer/Control/background" index="0"]
+text = "Try Jumping on enemies"
+
+[node name="Control2" parent="CanvasLayer3/hint/VBoxContainer" index="1"]
+margin_top = 4.0
+margin_right = 0.0
+margin_bottom = 4.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 autoplay = true
 bus = "Soundtrack"
 
 [editable path="Player"]
+
+[editable path="CanvasLayer3/hint"]

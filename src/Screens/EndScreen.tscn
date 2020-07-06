@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/disposable_bld.tres" type="Theme" id=9]
 [ext_resource path="res://src/Screens/pixel_theme.tres" type="Theme" id=10]
 
-
 [node name="EndScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,11 +34,18 @@ __meta__ = {
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 2 )]
 margin_right = 283.0
+margin_bottom = 81.0
 text = "Start Adventure Again"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
+[node name="Control" type="Control" parent="Menu"]
+margin_top = 85.0
+margin_right = 283.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 0, 30 )
+
 [node name="QuitButton" parent="Menu" instance=ExtResource( 1 )]
-margin_top = 102.0
+margin_top = 119.0
 margin_right = 283.0
 margin_bottom = 200.0
 
