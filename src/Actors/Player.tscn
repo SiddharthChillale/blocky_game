@@ -12,7 +12,7 @@
 extents = Vector2( 40, 44.3613 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 48.3529, 45.2687 )
+extents = Vector2( 48.4758, 44.9949 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "dies"

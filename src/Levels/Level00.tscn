@@ -64,9 +64,6 @@ next_scene = ExtResource( 7 )
 [node name="Coin11" parent="CoinsAll" instance=ExtResource( 3 )]
 position = Vector2( 456.162, 467.602 )
 
-[node name="Coin" parent="CoinsAll" instance=ExtResource( 3 )]
-position = Vector2( 2333.57, 744.288 )
-
 [node name="Coin2" parent="CoinsAll" instance=ExtResource( 3 )]
 position = Vector2( 1012.41, 147.48 )
 
