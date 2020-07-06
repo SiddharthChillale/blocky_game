@@ -10,6 +10,7 @@ onready var player_health: = get_tree().get_nodes_in_group("Health")
 
 
 export var stomp_impulse := 1000.0
+export var acc : = 3.0
 
 var _health: = 3
 var _jumpWasPressed = false
@@ -39,6 +40,7 @@ func _physics_process(delta):
 	var direction = get_direction()
 	var is_jump_interrupted := Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = cal_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
 	
@@ -85,7 +87,10 @@ func cal_move_velocity(
 	is_jump_interrupted: bool
 ):
 	var new_velocity := linear_velocity
-	new_velocity.x = speed.x * direction.x
+	if new_velocity.x != 0:
+		new_velocity.x = lerp(new_velocity.x, speed.x * direction.x, 0.2)
+	else :
+		new_velocity.x = lerp(new_velocity.x, speed.x * direction.x, 0.1)
 	new_velocity.y += gravity * get_physics_process_delta_time()
 	
 	if direction.y == -1.0:
