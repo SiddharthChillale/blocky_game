@@ -87,10 +87,15 @@ func cal_move_velocity(
 	is_jump_interrupted: bool
 ):
 	var new_velocity := linear_velocity
+	
+	# new updated velocity
 	if new_velocity.x != 0:
-		new_velocity.x = lerp(new_velocity.x, speed.x * direction.x, 0.2)
+		new_velocity.x = lerp(new_velocity.x, speed.x * direction.x, 0.3)
 	else :
 		new_velocity.x = lerp(new_velocity.x, speed.x * direction.x, 0.1)
+	
+	# old speed
+	#new_velocity.x = speed.x * direction.x
 	new_velocity.y += gravity * get_physics_process_delta_time()
 	
 	if direction.y == -1.0:
